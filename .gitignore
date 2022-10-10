@@ -1,1 +1,4 @@
 secrets.yml
+tlscert.yml
+certkube.pem
+certkube.pfx
