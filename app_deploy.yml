@@ -19,6 +19,11 @@ spec:
         image: whujin11e/public:azure_voting_app
         ports:
         - containerPort: 80
+        resources:
+          requests:
+            cpu: 250m
+          limits:
+            cpu: 500m
         env:
         - name: REDIS
           value: "clustredis"
@@ -35,7 +40,7 @@ kind: Service
 metadata:
   name: loadvoteapp
 spec:
-  type: LoadBalancer
+  type: ClusterIP
   ports:
   - port: 80
   selector:
